@@ -25,7 +25,7 @@ let baseMaps = {
 let map = L.map('mapid', {
   center: [44.0, -80.0],
   zoom: 2,
-  layers: [light]
+  layers: [dark]
 });
 
 // pass our map layers into our layers control and add the layers control to the map
@@ -34,13 +34,19 @@ L.control.layers(baseMaps).addTo(map);
 // // Accessing the Toronto airport routes GeoJSON URL
 let torontoData = "https://raw.githubusercontent.com/TeresaWehmeier/Mapping_Earthquakes/main/Mapping_Geo_JSON_Linestrings/static/json/torontoRoutes.json";
 
+// create a style for the lines
+let myStyle = {
+  color: "#ffffa1",
+  weight: 2
+}
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
   console.log(data);
    // createing a GeoJSON layer with the retrieved data.
    L.geoJson(data, {
+     style: myStyle,
     onEachFeature: function(features, layer){
-      layer.bindPopup("<h3>Airport code: " + features.properties.faa + "</h3> <hr> <h4>Airport name: " + features.properties.name + "</h4>")
+      layer.bindPopup("<h3>Airline: " + features.properties.airline + "</h3> <hr> <h4>Destination: " + features.properties.dst + "</h4>")
     }
   }).addTo(map);
   });

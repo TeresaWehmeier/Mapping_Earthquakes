@@ -14,6 +14,10 @@ The first requirement is all necessary files and folders are loaded to Github. T
 
 <a href="https://github.com/TeresaWehmeier/Mapping_Earthquakes/tree/main/Earthquakes_Challenge">Earthquake Challenge Folder</a>
 
+The code file is available in the above folder or at this link:
+
+<a href="Earthquakes_Challenge/static/js/challenge_logic.js">Challenge_logic.js</a>
+
 The next requirement is that all layers and visuals appear when the site is opened. Here is a shot of the page when opened:
 
 <img src="Earthquakes_Challenge/static/images/mapped_earthquakes_on_open.png" width="60%" height="30%">
@@ -32,7 +36,7 @@ A third is to add a major earthquake layer to the map and popup markers appear o
 
 ## Summary
 There were a few issues I found when reviewing the map that need attention, but I did not have time during the week this challenge was developed to further enhance them. However, the few items that should be fixed are:
-- The legend is relevant to the "eartquake" layer only, and does not apply to the "major earthquake" layer. There should be a separate legend for the two layers. However, since they can both appear simultaneously, I felt that would cause too much content on the map, and make it even more confusing. However, I may go in and modify the legend to include the additional layer for earthquakes with a magnitude greater than 6.
+- The legend is relevant to the "earthquake" layer only, and does not apply to the "major earthquake" layer. There should be a separate legend for the two layers. However, since they can both appear simultaneously, I felt that would cause too much content on the map, and make it even more confusing. However, I may go in and modify the legend to include the additional layer for earthquakes with a magnitude greater than 6.
 - When one of the layers (earthquakes and major EQ) are turned off then on, the other layer may disappear. Probably a bug in my code that I need to investigate.
 - I would probably change the tectonic plate layer to always display. I don't really see the need to turn it off and on. 
 
